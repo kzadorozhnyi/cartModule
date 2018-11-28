@@ -1,0 +1,145 @@
+body {
+    background-color: #fff;
+    color: #111;
+    font-family: 'Roboto', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.cart-container {
+    max-width: 100%;
+    width: 460px;
+    margin: 0 auto;
+}
+
+.cart-body,
+.cart-header {
+    padding-left: 25px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease-in-out, max-height 0.25s ease-in-out 0.25s;
+    max-height: 200px;
+    height: auto;;
+    transform: translateX(0);
+    border-bottom: 1px solid #eee;
+    padding-right: 30px;
+}
+
+.cart-item.removed {
+    max-height: 0;
+    transform: translateX(-300%);
+}
+
+.cart-item .remove {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    font-size: 26px;
+    color: #111;
+    font-family: inherit;
+    font-weight: 100;
+    transform: rotate(45deg);
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item-image {
+    max-width: 96px;
+    max-height: 96px;
+    margin: 5px 0;
+}
+
+.cart-item-count {
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.cart-item-title {
+    padding-bottom: 10px;
+}
+
+.click-disabled .btn {
+    pointer-events: none;
+}
+
+.cart-item-count .btn {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.cart-item-price {
+    display: inline-flex;
+}
+
+.cart-item-price-total {
+    font-weight: 500;
+}
+
+.cart-item-count .count-input {
+    position: relative;
+    width: 36px;
+    height: 30px;
+    text-align: center;
+    cursor: default;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+.count-input .count-slide {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.count-input.animated .count-slide {
+    transition: transform 0.25s ease-in-out;
+}
+
+.count-input.slide-inc .count-slide {
+    transform: translate(-50%, calc(-50% - 30px));
+}
+
+.count-input.slide-dec .count-slide {
+    transform: translate(-50%, calc(-50% + 30px));
+}
+
+.count-input .top-value {
+  height: 30px;
+  line-height: 30px;
+}
+
+.count-input .value {
+  height: 30px;
+  line-height: 30px;
+}
+
+.count-input .bottom-value {
+  height: 30px;
+  line-height: 30px;
+}
+
+.cart-footer {
+    padding-top: 10px;
+}
